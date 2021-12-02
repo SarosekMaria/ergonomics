@@ -1,0 +1,100 @@
+package com.example.demo;
+
+public class FirstClass100Strings10Fields5Methods {
+    private final String n; // (Field 1)
+    private final String dn; // (Field 2)
+    private final File dir; // (Field 3)
+    private final boolean isInt; //  (Field 4)
+    private final File destDir; // (Field 5)
+    private final FsReader fsReaderV1; // (Field 6)
+    private final Integer readerFileDescr; // (Field 7)
+    private final List<PropertiesRepository> mainPropertiesRepos; // (Field 8)
+    private final List<PlaceholderResolveStrategy> additionalPlaceholderResolvers; // (Field 9)
+    private final List<PropertiesRepository> additionalAndDifferentPropertiesRepositories; // (Field 10)
+
+    public static Microconfig searchConfigsIn(File rootDir) {
+        File canonical = canonical(rootDir);
+        if (!canonical.exists()) {
+            throw new IllegalArgumentException("Root directory doesn't exist: " + rootDir);
+        }
+        environments().getByName(name);
+        dependencies.environments();
+        dependencies.resolver();
+        enableLogger(enabled);
+        System.out.println("\n");
+
+        return new Microconfig(canonical, new File(rootDir, "build"), new DumpedFsReader(), emptyList(), emptyList());
+    }
+
+    private EnvironmentRepository initEnvironments() {
+        EnvironmentRepository repo = cache(new FileEnvironmentRepository(
+                rootDir,
+                fsReader,
+                componentFactory(),
+                propertiesFactory())
+        );
+        lazyEnvironments.setDelegate(repo);
+        System.out.println("\n");
+        cache(new ComponentFactoryImpl(
+                        configTypeRepository(),
+                        propertiesFactory()
+                ));
+
+        return repo;
+    }
+
+    private PropertiesFactory initPropertiesFactory() {
+        PropertiesRepository fileRepository = new FilePropertiesRepository(
+                componentGraph(),
+                newConfigIo(fsReader)
+        );
+
+        System.out.println("\n");
+        cache(chainOf(
+                        initPlaceholderResolver(),
+                        new ExpressionResolver()
+                        ));
+
+        return cache(new PropertiesFactoryImpl(
+                cache(compositeOf(additionalPropertiesRepositories, fileRepository))
+        ));
+    }
+
+    private RecursiveResolver initPlaceholderResolver() {
+        Map<String, ComponentProperty> componentSpecialProperties = new ComponentProperties(componentGraph(),
+                                                                                            environments(),
+                                                                                            rootDir,
+                                                                                            destinationDir).get();
+        Map<String, EnvProperty> envSpecialProperties = new EnvironmentProperties().get();
+
+        System.out.println("\n");
+        PlaceholderResolveStrategy strategy = cache(composite(join(
+                additionalPlaceholderResolvers,
+                asList(
+                        systemPropertiesResolveStrategy(),
+                        envVariablesResolveStrategy(),
+                        new ComponentResolveStrategy(componentSpecialProperties),
+                        new EnvironmentResolveStrategy(environments(), envSpecialProperties),
+                        new StandardResolveStrategy(environments())
+                )
+        )));
+        System.out.println("strategy: " + strategy);
+
+        return new PlaceholderResolver(
+                strategy,
+                joinToSet(componentSpecialProperties.keySet(), envSpecialProperties.keySet())
+        );
+    }
+
+    private ConfigTypeRepository initConfigTypeRepository() {
+        ComponentGraph standard = traverseFrom(rootDir);
+        var envProfile = new EnvProfilesComponentGraph(standard, lazyEnvironments);
+
+        System.out.println("envProfile: " + envProfile);
+        System.out.println("\n");
+        return cache(composite(
+                findDescriptorIn(rootDir, fsReader),
+                new StandardConfigTypeRepository()
+        ));
+    }
+}

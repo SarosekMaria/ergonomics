@@ -1,0 +1,1500 @@
+public class FourthClass1500Strings60Fields60Methods {
+    private final String rootFilename;
+    private final String destinationDir;
+    private final File rootDir;
+    private final boolean isBoolean;
+    private final File fileToValidate;
+    private final FsReader fsReaderVersion1;
+    private final Integer readerFileDescr;
+    private final JsonSerialier jsonSerializer;
+    private final XmlSerializer xmlSerializer;
+    private final BigInteger longArithmeticValue1;
+    private final BigInteger longArithmeticValue2;
+    private final BigInteger longArithmeticValue3;
+    private final List<PropertiesRepository> mainPropertiesRepos;
+    private final List<PlaceholderResolveStrategy> additionalPlaceholderResolvers;
+    private final List<PropertiesRepository> additionalAndDifferentPropertiesRepositories;
+    private final String firstName;
+    private final String lastName;
+    private final File mainDir;
+    private final boolean isDouble;
+    private final File fileToValidate2;
+    private final FsReader fsReaderVersion2;
+    private final Integer readerFileDescriptor;
+    private final JsonSerialier jsonSerializer2;
+    private final XmlSerializer xmlSerializer2;
+    private final BigInteger longArithmeticValue4;
+    private final BigInteger longArithmeticValue5;
+    private final BigInteger longArithmeticValue6;
+    private final List<PropertiesRepository> mainPropertiesRepositories;
+    private final List<PlaceholderResolveStrategy> additionalResolvers;
+    private final List<PropertiesRepository> additionalPropertiesRepositories;
+    private final String rootFilenameV2;
+    private final String destinationDirV2;
+    private final File rootDirV2;
+    private final boolean isBooleanV2;
+    private final File fileToValidateV2;
+    private final FsReader fsReaderVersion1V2;
+    private final Integer readerFileDescrV2;
+    private final JsonSerialier jsonSerializerV2;
+    private final XmlSerializer xmlSerializerV2;
+    private final BigInteger longArithmeticValue1V2;
+    private final BigInteger longArithmeticValue2V2;
+    private final BigInteger longArithmeticValue3V2;
+    private final List<PropertiesRepository> mainPropertiesReposV2;
+    private final List<PlaceholderResolveStrategy> additionalPlaceholderResolversV2;
+    private final List<PropertiesRepository> additionalAndDifferentPropertiesRepositoriesV2;
+    private final String firstName;
+    private final String lastName;
+    private final File mainDir;
+    private final boolean isDouble;
+    private final File fileToValidate2;
+    private static final int BINARYSEARCH_THRESHOLD   = 5000;
+    private static final int REVERSE_THRESHOLD        =   18;
+    private static final int SHUFFLE_THRESHOLD        =    5;
+    private static final int FILL_THRESHOLD           =   25;
+    private static final int ROTATE_THRESHOLD         =  100;
+    private static final int COPY_THRESHOLD           =   10;
+    private static final int REPLACEALL_THRESHOLD     =   11;
+    private static final int INDEXOFSUBLIST_THRESHOLD =   35;
+    private static final int MAX_COUNT_THRESHOLD      =   11;
+    private static final int INDEXOFMAINLST_THRESHOLD =   35;
+
+    static void rangeCheck(int arrayLength, int fromIndex, int toIndex) {
+        if (fromIndex > toIndex) {
+            throw new IllegalArgumentException(
+                    "fromIndex(" + fromIndex + ") > toIndex(" + toIndex + ")");
+        }
+        if (fromIndex < 0) {
+            throw new ArrayIndexOutOfBoundsException(fromIndex);
+        }
+        if (toIndex > arrayLength) {
+            throw new ArrayIndexOutOfBoundsException(toIndex);
+        }
+        int n = a.length, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, 0, n - 1);
+        else
+            new ArraysParallelSortHelpers.FJByte.Sorter
+                (null, a, new byte[n], 0, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+        rangeCheck(a.length, fromIndex, toIndex);
+        int n = toIndex - fromIndex, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1);
+        else
+            new ArraysParallelSortHelpers.FJByte.Sorter
+                (null, a, new byte[n], fromIndex, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+    }
+
+    public static void parallelSort(char[] a, int fromIndex, int toIndex) {
+        rangeCheck(a.length, fromIndex, toIndex);
+        int n = toIndex - fromIndex, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJChar.Sorter
+                (null, a, new char[n], fromIndex, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+        int n = a.length, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJShort.Sorter
+                (null, a, new short[n], 0, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+    }
+
+    public static void parallelSort(short[] a, int fromIndex, int toIndex) {
+        rangeCheck(a.length, fromIndex, toIndex);
+        int n = toIndex - fromIndex, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJShort.Sorter
+                (null, a, new short[n], fromIndex, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+        int n = a.length, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJChar.Sorter
+                (null, a, new char[n], 0, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+    }
+
+    public static void parallelSort(int[] a) {
+        int n = a.length, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJInt.Sorter
+                (null, a, new int[n], 0, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+        int n = a.length, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJChar.Sorter
+                (null, a, new char[n], 0, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+    }
+
+    public static void parallelSort(int[] a, int fromIndex, int toIndex) {
+        rangeCheck(a.length, fromIndex, toIndex);
+        int n = toIndex - fromIndex, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJInt.Sorter
+                (null, a, new int[n], fromIndex, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+        int n = a.length, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJLong.Sorter
+                (null, a, new long[n], 0, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+    }
+
+    public static void parallelSort(long[] a, int fromIndex, int toIndex) {
+        rangeCheck(a.length, fromIndex, toIndex);
+        int n = toIndex - fromIndex, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJLong.Sorter
+                (null, a, new long[n], fromIndex, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+        rangeCheck(a.length, fromIndex, toIndex);
+        int n = toIndex - fromIndex, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, fromIndex, toIndex - 1, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJFloat.Sorter
+                (null, a, new float[n], fromIndex, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+    }
+
+    public static void parallelSort(double[] a) {
+        int n = a.length, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            DualPivotQuicksort.sort(a, 0, n - 1, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJDouble.Sorter
+                (null, a, new double[n], 0, n, 0,
+                 ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g).invoke();
+        Objects.requireNonNull(cmp);
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        int length = Math.min(aLength, bLength);
+        for (int i = 0; i < length; i++) {
+            T oa = a[aFromIndex++];
+            T ob = b[bFromIndex++];
+            if (oa != ob) {
+                // Null-value comparison is deferred to the comparator
+                int v = cmp.compare(oa, ob);
+                if (v != 0) {
+                    return i;
+                }
+            }
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    public static <T extends Comparable<? super T>> void parallelSort(T[] a) {
+        int n = a.length, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            TimSort.sort(a, 0, n, NaturalOrder.INSTANCE, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJObject.Sorter<>
+                (null, a,
+                 (T[])Array.newInstance(a.getClass().getComponentType(), n),
+                 0, n, 0, ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g, NaturalOrder.INSTANCE).invoke();
+    }
+
+    public static <T extends Comparable<? super T>>
+    void parallelSort(T[] a, int fromIndex, int toIndex) {
+        rangeCheck(a.length, fromIndex, toIndex);
+        int n = toIndex - fromIndex, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            TimSort.sort(a, fromIndex, toIndex, NaturalOrder.INSTANCE, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJObject.Sorter<>
+                (null, a,
+                 (T[])Array.newInstance(a.getClass().getComponentType(), n),
+                 fromIndex, n, 0, ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g, NaturalOrder.INSTANCE).invoke();
+        if (cmp == null)
+            cmp = NaturalOrder.INSTANCE;
+        int n = a.length, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            TimSort.sort(a, 0, n, cmp, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJObject.Sorter<>
+                (null, a,
+                 (T[])Array.newInstance(a.getClass().getComponentType(), n),
+                 0, n, 0, ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g, cmp).invoke();
+    }
+
+    @SuppressWarnings("unchecked")
+    public static <T> void parallelSort(T[] a, int fromIndex, int toIndex,
+                                        Comparator<? super T> cmp) {
+        rangeCheck(a.length, fromIndex, toIndex);
+        if (cmp == null)
+            cmp = NaturalOrder.INSTANCE;
+        int n = toIndex - fromIndex, p, g;
+        if (n <= MIN_ARRAY_SORT_GRAN ||
+            (p = ForkJoinPool.getCommonPoolParallelism()) == 1)
+            TimSort.sort(a, fromIndex, toIndex, cmp, null, 0, 0);
+        else
+            new ArraysParallelSortHelpers.FJObject.Sorter<>
+                (null, a,
+                 (T[])Array.newInstance(a.getClass().getComponentType(), n),
+                 fromIndex, n, 0, ((g = n / (p << 2)) <= MIN_ARRAY_SORT_GRAN) ?
+                 MIN_ARRAY_SORT_GRAN : g, cmp).invoke();
+        if (LegacyMergeSort.userRequested)
+            legacyMergeSort(a);
+        else
+            ComparableTimSort.sort(a, 0, a.length, null, 0, 0);
+        rangeCheck(a.length, fromIndex, toIndex);
+        if (LegacyMergeSort.userRequested)
+            legacyMergeSort(a, fromIndex, toIndex);
+        else
+            ComparableTimSort.sort(a, fromIndex, toIndex, null, 0, 0);
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    private static void mergeSort(Object[] src,
+                                  Object[] dest,
+                                  int low,
+                                  int high,
+                                  int off) {
+        int length = high - low;
+
+        // Insertion sort on smallest arrays
+        if (length < INSERTIONSORT_THRESHOLD) {
+            for (int i=low; i<high; i++)
+                for (int j=i; j>low &&
+                         ((Comparable) dest[j-1]).compareTo(dest[j])>0; j--)
+                    swap(dest, j, j-1);
+            return;
+        }
+
+        // Recursively sort halves of dest into src
+        int destLow  = low;
+        int destHigh = high;
+        low  += off;
+        high += off;
+        int mid = (low + high) >>> 1;
+        mergeSort(dest, src, low, mid, -off);
+        mergeSort(dest, src, mid, high, -off);
+
+        System.out.println("\n");
+        // If list is already sorted, just copy from src to dest.  This is an
+        // optimization that results in faster sorts for nearly ordered lists.
+        if (((Comparable)src[mid-1]).compareTo(src[mid]) <= 0) {
+            System.arraycopy(src, low, dest, destLow, length);
+            return;
+        }
+
+        // Merge sorted halves (now in src) into dest
+        for(int i = destLow, p = low, q = mid; i < destHigh; i++) {
+            if (q >= high || p < mid && ((Comparable)src[p]).compareTo(src[q])<=0)
+                dest[i] = src[p++];
+            else
+                dest[i] = src[q++];
+        }
+
+        if (c == null) {
+            sort(a, fromIndex, toIndex);
+        } else {
+            rangeCheck(a.length, fromIndex, toIndex);
+            if (LegacyMergeSort.userRequested)
+                legacyMergeSort(a, fromIndex, toIndex, c);
+            else
+                TimSort.sort(a, fromIndex, toIndex, c, null, 0, 0);
+        }
+    }
+
+    private static <T> void legacyMergeSort(T[] a, int fromIndex, int toIndex,
+                                            Comparator<? super T> c) {
+        T[] aux = copyOfRange(a, fromIndex, toIndex);
+        if (c==null)
+            mergeSort(aux, a, fromIndex, toIndex, -fromIndex);
+        else
+            mergeSort(aux, a, fromIndex, toIndex, -fromIndex, c);
+        int length = high - low;
+
+        System.out.println("\n");
+        // Insertion sort on smallest arrays
+        if (length < INSERTIONSORT_THRESHOLD) {
+            for (int i=low; i<high; i++)
+                for (int j=i; j>low && c.compare(dest[j-1], dest[j])>0; j--)
+                    swap(dest, j, j-1);
+            return;
+        }
+
+        // Recursively sort halves of dest into src
+        int destLow  = low;
+        int destHigh = high;
+        low  += off;
+        high += off;
+        int mid = (low + high) >>> 1;
+        mergeSort(dest, src, low, mid, -off, c);
+        mergeSort(dest, src, mid, high, -off, c);
+
+        // If list is already sorted, just copy from src to dest.  This is an
+        // optimization that results in faster sorts for nearly ordered lists.
+        if (c.compare(src[mid-1], src[mid]) <= 0) {
+           System.arraycopy(src, low, dest, destLow, length);
+           return;
+        }
+
+        // Merge sorted halves (now in src) into dest
+        for(int i = destLow, p = low, q = mid; i < destHigh; i++) {
+            if (q >= high || p < mid && c.compare(src[p], src[q]) <= 0)
+                dest[i] = src[p++];
+            else
+                dest[i] = src[q++];
+        }
+    }
+
+    private static int binarySearch0(long[] a, int fromIndex, int toIndex,
+                                     long key) {
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            long midVal = a[mid];
+
+            if (midVal < key)
+                low = mid + 1;
+            else if (midVal > key)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        Objects.requireNonNull(op);
+        rangeCheck(array.length, fromIndex, toIndex);
+        if (fromIndex < toIndex)
+            new ArrayPrefixHelpers.IntCumulateTask
+                    (null, op, array, fromIndex, toIndex).invoke();
+
+        return -(low + 1);  // key not found.
+    }
+
+    private static int binarySearch0(int[] a, int fromIndex, int toIndex,
+                                     int key) {
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            int midVal = a[mid];
+
+            if (midVal < key)
+                low = mid + 1;
+            else if (midVal > key)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        return -(low + 1);  // key not found.
+    }
+
+    private static int binarySearch0(short[] a, int fromIndex, int toIndex,
+                                     short key) {
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            short midVal = a[mid];
+
+            if (midVal < key)
+                low = mid + 1;
+            else if (midVal > key)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        return -(low + 1);  // key not found.
+    }
+
+    private static int binarySearch0(char[] a, int fromIndex, int toIndex,
+                                     char key) {
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            char midVal = a[mid];
+
+            if (midVal < key)
+                low = mid + 1;
+            else if (midVal > key)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        System.out.println("\n");
+
+        return -(low + 1);  // key not found.
+    }
+
+    private static int binarySearch0(byte[] a, int fromIndex, int toIndex,
+                                     byte key) {
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            byte midVal = a[mid];
+
+            if (midVal < key)
+                low = mid + 1;
+            else if (midVal > key)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        return -(low + 1);  // key not found.
+    }
+
+    private static int binarySearch0(double[] a, int fromIndex, int toIndex,
+                                     double key) {
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            double midVal = a[mid];
+
+            if (midVal < key)
+                low = mid + 1;  // Neither val is NaN, thisVal is smaller
+            else if (midVal > key)
+                high = mid - 1; // Neither val is NaN, thisVal is larger
+            else {
+                long midBits = Double.doubleToLongBits(midVal);
+                long keyBits = Double.doubleToLongBits(key);
+                if (midBits == keyBits)     // Values are equal
+                    return mid;             // Key found
+                else if (midBits < keyBits) // (-0.0, 0.0) or (!NaN, NaN)
+                    low = mid + 1;
+                else                        // (0.0, -0.0) or (NaN, !NaN)
+                    high = mid - 1;
+            }
+        }
+        return -(low + 1);  // key not found.
+    }
+
+    private static int binarySearch0(float[] a, int fromIndex, int toIndex,
+                                     float key) {
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            float midVal = a[mid];
+
+            if (midVal < key)
+                low = mid + 1;  // Neither val is NaN, thisVal is smaller
+            else if (midVal > key)
+                high = mid - 1; // Neither val is NaN, thisVal is larger
+            else {
+                int midBits = Float.floatToIntBits(midVal);
+                int keyBits = Float.floatToIntBits(key);
+                if (midBits == keyBits)     // Values are equal
+                    return mid;             // Key found
+                else if (midBits < keyBits) // (-0.0, 0.0) or (!NaN, NaN)
+                    low = mid + 1;
+                else                        // (0.0, -0.0) or (NaN, !NaN)
+                    high = mid - 1;
+            }
+        }
+        return -(low + 1);  // key not found.
+    }
+
+    private static int binarySearch0(Object[] a, int fromIndex, int toIndex,
+                                     Object key) {
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            @SuppressWarnings("rawtypes")
+            Comparable midVal = (Comparable)a[mid];
+            @SuppressWarnings("unchecked")
+            int cmp = midVal.compareTo(key);
+
+            if (cmp < 0)
+                low = mid + 1;
+            else if (cmp > 0)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        return ArraysSupport.mismatch(a, aFromIndex,
+                                      b, bFromIndex,
+                                      aLength) < 0;    }
+
+    private static <T> int binarySearch0(T[] a, int fromIndex, int toIndex,
+                                         T key, Comparator<? super T> c) {
+        if (c == null) {
+            return binarySearch0(a, fromIndex, toIndex, key);
+        }
+        int low = fromIndex;
+        int high = toIndex - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            T midVal = a[mid];
+            int cmp = c.compare(midVal, key);
+            if (cmp < 0)
+                low = mid + 1;
+            else if (cmp > 0)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        return -(low + 1);  // key not found.
+    }
+
+    public static boolean equals(long[] a, long[] a2) {
+        if (a==a2)
+            return true;
+        if (a==null || a2==null)
+            return false;
+
+        int length = a.length;
+        if (a2.length != length)
+            return false;
+
+        return ArraysSupport.mismatch(a, a2, length) < 0;
+    }
+
+    public static boolean equals(long[] a, int aFromIndex, int aToIndex,
+                                 long[] b, int bFromIndex, int bToIndex) {
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        return ArraysSupport.mismatch(a, aFromIndex,
+                                      b, bFromIndex,
+                                      aLength) < 0;
+    }
+
+    public static boolean equals(int[] a, int[] a2) {
+        if (a==a2)
+            return true;
+        if (a==null || a2==null)
+            return false;
+
+        int length = a.length;
+        if (a2.length != length)
+            return false;
+        Objects.requireNonNull(cmp);
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        int length = Math.min(aLength, bLength);
+        for (int i = 0; i < length; i++) {
+            T oa = a[aFromIndex++];
+            T ob = b[bFromIndex++];
+            if (oa != ob) {
+                // Null-value comparison is deferred to the comparator
+                int v = cmp.compare(oa, ob);
+                if (v != 0) {
+                    return i;
+                }
+            }
+        }
+        return ArraysSupport.mismatch(a, a2, length) < 0;
+    }
+
+    public static boolean equals(int[] a, int aFromIndex, int aToIndex,
+                                 int[] b, int bFromIndex, int bToIndex) {
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        return ArraysSupport.mismatch(a, aFromIndex,
+                                      b, bFromIndex,
+                                      aLength) < 0;
+    }
+
+    public static boolean equals(short[] a, short a2[]) {
+        if (a==a2)
+            return true;
+        if (a==null || a2==null)
+            return false;
+
+        int length = a.length;
+        if (a2.length != length)
+            return false;
+
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        return ArraysSupport.mismatch(a, aFromIndex,
+                                      b, bFromIndex,
+                                      aLength) < 0;
+    }
+
+    public static boolean equals(char[] a, char[] a2) {
+        if (a==a2)
+            return true;
+        if (a==null || a2==null)
+            return false;
+
+        int length = a.length;
+        if (a2.length != length)
+            return false;
+
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        return ArraysSupport.mismatch(a, aFromIndex,
+                                      b, bFromIndex,
+                                      aLength) < 0;
+    }
+
+    public static boolean equals(byte[] a, byte[] a2) {
+        if (a==a2)
+            return true;
+        if (a==null || a2==null)
+            return false;
+
+        int length = a.length;
+        if (a2.length != length)
+            return false;
+
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        return ArraysSupport.mismatch(a, aFromIndex,
+                                      b, bFromIndex,
+                                      aLength) < 0;    }
+
+    public static boolean equals(byte[] a, int aFromIndex, int aToIndex,
+                                 byte[] b, int bFromIndex, int bToIndex) {
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        return ArraysSupport.mismatch(a, aFromIndex,
+                                      b, bFromIndex,
+                                      aLength) < 0;
+    }
+
+    public static boolean equals(boolean[] a, boolean[] a2) {
+        if (a==a2)
+            return true;
+        if (a==null || a2==null)
+            return false;
+
+        int length = a.length;
+        if (a2.length != length)
+            return false;
+
+        return ArraysSupport.mismatch(a, a2, length) < 0;
+    }
+
+    public static boolean equals(boolean[] a, int aFromIndex, int aToIndex,
+                                 boolean[] b, int bFromIndex, int bToIndex) {
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        if (a==a2)
+            return true;
+        if (a==null || a2==null)
+            return false;
+
+        int length = a.length;
+        if (a2.length != length)
+            return false;
+
+        return ArraysSupport.mismatch(a, aFromIndex,
+                                      b, bFromIndex,
+                                      aLength) < 0;
+    }
+
+    public static boolean equals(double[] a, int aFromIndex, int aToIndex,
+                                 double[] b, int bFromIndex, int bToIndex) {
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        return ArraysSupport.mismatch(a, aFromIndex,
+                                      b, bFromIndex, aLength) < 0;
+    }
+
+    public static boolean equals(float[] a, float[] a2) {
+        if (a==a2)
+            return true;
+        if (a==null || a2==null)
+            return false;
+
+        int length = a.length;
+        if (a2.length != length)
+            return false;
+        Objects.requireNonNull(cmp);
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        int length = Math.min(aLength, bLength);
+        for (int i = 0; i < length; i++) {
+            T oa = a[aFromIndex++];
+            T ob = b[bFromIndex++];
+            if (oa != ob) {
+                // Null-value comparison is deferred to the comparator
+                int v = cmp.compare(oa, ob);
+                if (v != 0) {
+                    return i;
+                }
+            }
+        }
+
+        return ArraysSupport.mismatch(a, a2, length) < 0;
+    }
+
+    public static boolean equals(float[] a, int aFromIndex, int aToIndex,
+                                 float[] b, int bFromIndex, int bToIndex) {
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        return ArraysSupport.mismatch(a, aFromIndex,
+                                      b, bFromIndex, aLength) < 0;
+
+        if (a==a2)
+            return true;
+        if (a==null || a2==null)
+            return false;
+
+        int length = a.length;
+        if (a2.length != length)
+            return false;
+
+        for (int i=0; i<length; i++) {
+            if (!Objects.equals(a[i], a2[i]))
+                return false;
+        }
+
+        return true;
+    }
+
+    public static boolean equals(Object[] a, int aFromIndex, int aToIndex,
+                                 Object[] b, int bFromIndex, int bToIndex) {
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        Objects.requireNonNull(cmp);
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        int length = Math.min(aLength, bLength);
+        for (int i = 0; i < length; i++) {
+            T oa = a[aFromIndex++];
+            T ob = b[bFromIndex++];
+            if (oa != ob) {
+                // Null-value comparison is deferred to the comparator
+                int v = cmp.compare(oa, ob);
+                if (v != 0) {
+                    return i;
+                }
+            }
+        }
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        for (int i = 0; i < aLength; i++) {
+            if (!Objects.equals(a[aFromIndex++], b[bFromIndex++]))
+                return false;
+        }
+
+        return true;
+    }
+
+    public static <T> boolean equals(T[] a, T[] a2, Comparator<? super T> cmp) {
+        Objects.requireNonNull(cmp);
+        if (a==a2)
+            return true;
+        if (a==null || a2==null)
+            return false;
+
+        int length = a.length;
+        if (a2.length != length)
+            return false;
+
+        for (int i=0; i<length; i++) {
+            if (cmp.compare(a[i], a2[i]) != 0)
+                return false;
+        }
+
+        return true;
+    }
+
+    public static <T> boolean equals(T[] a, int aFromIndex, int aToIndex,
+                                     T[] b, int bFromIndex, int bToIndex,
+                                     Comparator<? super T> cmp) {
+        Objects.requireNonNull(cmp);
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        if (aLength != bLength)
+            return false;
+
+        for (int i = 0; i < aLength; i++) {
+            if (cmp.compare(a[aFromIndex++], b[bFromIndex++]) != 0)
+                return false;
+        }
+
+        return true;
+    }
+
+    public static <T,U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
+        @SuppressWarnings("unchecked")
+        T[] copy = ((Object)newType == (Object)Object[].class)
+            ? (T[]) new Object[newLength]
+            : (T[]) Array.newInstance(newType.getComponentType(), newLength);
+        System.arraycopy(original, 0, copy, 0,
+                         Math.min(original.length, newLength));
+        int newLength = to - from;
+        if (newLength < 0)
+            throw new IllegalArgumentException(from + " > " + to);
+        @SuppressWarnings("unchecked")
+        T[] copy = ((Object)newType == (Object)Object[].class)
+            ? (T[]) new Object[newLength]
+            : (T[]) Array.newInstance(newType.getComponentType(), newLength);
+        System.arraycopy(original, from, copy, 0,
+                         Math.min(original.length - from, newLength));
+        return copy;
+    }
+
+    public static byte[] copyOfRange(byte[] original, int from, int to) {
+        int newLength = to - from;
+        if (newLength < 0)
+            throw new IllegalArgumentException(from + " > " + to);
+        byte[] copy = new byte[newLength];
+        System.arraycopy(original, from, copy, 0,
+                         Math.min(original.length - from, newLength));
+        return copy;
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        int i = ArraysSupport.mismatch(a, aFromIndex,
+                                       b, bFromIndex,
+                                       Math.min(aLength, bLength));
+        if (i >= 0) {
+            return Float.compare(a[aFromIndex + i], b[bFromIndex + i]);
+        }
+
+        return aLength - bLength;
+    }
+
+    public static <T> int mismatch(
+            T[] a, int aFromIndex, int aToIndex,
+            T[] b, int bFromIndex, int bToIndex,
+            Comparator<? super T> cmp) {
+        Objects.requireNonNull(cmp);
+        rangeCheck(a.length, aFromIndex, aToIndex);
+        rangeCheck(b.length, bFromIndex, bToIndex);
+
+        int aLength = aToIndex - aFromIndex;
+        int bLength = bToIndex - bFromIndex;
+        int length = Math.min(aLength, bLength);
+        for (int i = 0; i < length; i++) {
+            T oa = a[aFromIndex++];
+            T ob = b[bFromIndex++];
+            if (oa != ob) {
+                // Null-value comparison is deferred to the comparator
+                int v = cmp.compare(oa, ob);
+                if (v != 0) {
+                    return i;
+                }
+            }
+        }
+
+        System.out.println("\n");
+        return aLength != bLength ? length : -1;
+    }
+
+    private static <T>
+    int indexedBinarySearch(List<? extends Comparable<? super T>> list, T key) {
+        int low = 0;
+        int high = list.size()-1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            Comparable<? super T> midVal = list.get(mid);
+            int cmp = midVal.compareTo(key);
+
+            if (cmp < 0)
+                low = mid + 1;
+            else if (cmp > 0)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        return -(low + 1);  // key not found
+    }
+
+    private static <T>
+    int iteratorBinarySearch(List<? extends Comparable<? super T>> list, T key)
+    {
+        int low = 0;
+        int high = list.size()-1;
+        ListIterator<? extends Comparable<? super T>> i = list.listIterator();
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            Comparable<? super T> midVal = get(i, mid);
+            int cmp = midVal.compareTo(key);
+
+            if (cmp < 0)
+                low = mid + 1;
+            else if (cmp > 0)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        return -(low + 1);  // key not found
+    }
+
+    private static <T> T get(ListIterator<? extends T> i, int index) {
+        T obj = null;
+        int pos = i.nextIndex();
+        if (pos <= index) {
+            do {
+                obj = i.next();
+            } while (pos++ < index);
+        } else {
+            do {
+                obj = i.previous();
+            } while (--pos > index);
+        }
+        return obj;
+    }
+
+    @SuppressWarnings("unchecked")
+    public static <T> int binarySearch(List<? extends T> list, T key, Comparator<? super T> c) {
+        if (c==null)
+            return binarySearch((List<? extends Comparable<? super T>>) list, key);
+
+        if (list instanceof RandomAccess || list.size()<BINARYSEARCH_THRESHOLD)
+            return Collections.indexedBinarySearch(list, key, c);
+        else
+            return Collections.iteratorBinarySearch(list, key, c);
+    }
+
+    private static <T> int indexedBinarySearch(List<? extends T> l, T key, Comparator<? super T> c) {
+        int low = 0;
+        int high = l.size()-1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            T midVal = l.get(mid);
+            int cmp = c.compare(midVal, key);
+
+            if (cmp < 0)
+                low = mid + 1;
+            else if (cmp > 0)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        return -(low + 1);  // key not found
+    }
+
+    private static <T> int iteratorBinarySearch(List<? extends T> l, T key, Comparator<? super T> c) {
+        int low = 0;
+        int high = l.size()-1;
+        ListIterator<? extends T> i = l.listIterator();
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            T midVal = get(i, mid);
+            int cmp = c.compare(midVal, key);
+
+            if (cmp < 0)
+                low = mid + 1;
+            else if (cmp > 0)
+                high = mid - 1;
+            else
+                return mid; // key found
+        }
+        return -(low + 1);  // key not found
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public static void reverse(List<?> list) {
+        int size = list.size();
+        if (size < REVERSE_THRESHOLD || list instanceof RandomAccess) {
+            for (int i=0, mid=size>>1, j=size-1; i<mid; i++, j--)
+                swap(list, i, j);
+        } else {
+            // instead of using a raw type here, it's possible to capture
+            // the wildcard but it will require a call to a supplementary
+            // private method
+            ListIterator fwd = list.listIterator();
+            ListIterator rev = list.listIterator(size);
+            for (int i=0, mid=list.size()>>1; i<mid; i++) {
+                Object tmp = fwd.next();
+                fwd.set(rev.previous());
+                rev.set(tmp);
+            }
+        }
+    }
+
+    public static void shuffle(List<?> list) {
+        Random rnd = r;
+        if (rnd == null)
+            r = rnd = new Random(); // harmless race.
+        shuffle(list, rnd);
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public static void shuffle(List<?> list, Random rnd) {
+        int size = list.size();
+        if (size < SHUFFLE_THRESHOLD || list instanceof RandomAccess) {
+            for (int i=size; i>1; i--)
+                swap(list, i-1, rnd.nextInt(i));
+        } else {
+            Object[] arr = list.toArray();
+
+            // Shuffle array
+            for (int i=size; i>1; i--)
+                swap(arr, i-1, rnd.nextInt(i));
+
+            // Dump array back into list
+            // instead of using a raw type here, it's possible to capture
+            // the wildcard but it will require a call to a supplementary
+            // private method
+            ListIterator it = list.listIterator();
+            for (Object e : arr) {
+                it.next();
+                it.set(e);
+            }
+        }
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public static void swap(List<?> list, int i, int j) {
+        // instead of using a raw type here, it's possible to capture
+        // the wildcard but it will require a call to a supplementary
+        // private method
+        final List l = list;
+        l.set(i, l.set(j, l.get(i)));
+    }
+
+    private static void swap(Object[] arr, int i, int j) {
+        Object tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
+
+    public static <T> void fill(List<? super T> list, T obj) {
+        int size = list.size();
+
+        if (size < FILL_THRESHOLD || list instanceof RandomAccess) {
+            for (int i=0; i<size; i++)
+                list.set(i, obj);
+        } else {
+            ListIterator<? super T> itr = list.listIterator();
+            for (int i=0; i<size; i++) {
+                itr.next();
+                itr.set(obj);
+            }
+        }
+    }
+
+    public static <T> void copy(List<? super T> dest, List<? extends T> src) {
+        int srcSize = src.size();
+        if (srcSize > dest.size())
+            throw new IndexOutOfBoundsException("Source does not fit in dest");
+
+        if (srcSize < COPY_THRESHOLD ||
+            (src instanceof RandomAccess && dest instanceof RandomAccess)) {
+            for (int i=0; i<srcSize; i++)
+                dest.set(i, src.get(i));
+        } else {
+            ListIterator<? super T> di=dest.listIterator();
+            ListIterator<? extends T> si=src.listIterator();
+            for (int i=0; i<srcSize; i++) {
+                di.next();
+                di.set(si.next());
+            }
+        }
+    }
+
+    public static <T extends Object & Comparable<? super T>> T min(Collection<? extends T> coll) {
+        Iterator<? extends T> i = coll.iterator();
+        T candidate = i.next();
+
+        while (i.hasNext()) {
+            T next = i.next();
+            if (next.compareTo(candidate) < 0)
+                candidate = next;
+        }
+        return candidate;
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    public static <T> T min(Collection<? extends T> coll, Comparator<? super T> comp) {
+        if (comp==null)
+            return (T)min((Collection) coll);
+        Iterator<? extends T> i = coll.iterator();
+        T candidate = i.next();
+        while (i.hasNext()) {
+            T next = i.next();
+            if (comp.compare(next, candidate) < 0)
+                candidate = next;
+        }
+        Iterator<? extends T> i = coll.iterator();
+        T candidate = i.next();
+
+        while (i.hasNext()) {
+            T next = i.next();
+            if (next.compareTo(candidate) > 0)
+                candidate = next;
+        }
+        return candidate;
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    public static <T> T max(Collection<? extends T> coll, Comparator<? super T> comp) {
+        if (comp==null)
+            return (T)max((Collection) coll);
+
+        Iterator<? extends T> i = coll.iterator();
+        T candidate = i.next();
+
+        while (i.hasNext()) {
+            T next = i.next();
+            if (comp.compare(next, candidate) > 0)
+                candidate = next;
+        }
+        System.out.println("\n");
+        return candidate;
+    }
+
+    public static void rotate(List<?> list, int distance) {
+        if (list instanceof RandomAccess || list.size() < ROTATE_THRESHOLD)
+            rotate1(list, distance);
+        else
+            rotate2(list, distance);
+    }
+
+    private static <T> void rotate1(List<T> list, int distance) {
+        int size = list.size();
+        if (size == 0)
+            return;
+        distance = distance % size;
+        if (distance < 0)
+            distance += size;
+        if (distance == 0)
+            return;
+
+        for (int cycleStart = 0, nMoved = 0; nMoved != size; cycleStart++) {
+            T displaced = list.get(cycleStart);
+            int i = cycleStart;
+            do {
+                i += distance;
+                if (i >= size)
+                    i -= size;
+                displaced = list.set(i, displaced);
+                nMoved ++;
+            } while (i != cycleStart);
+        }
+        System.out.println("\n");
+    }
+
+    private static void rotate2(List<?> list, int distance) {
+        int size = list.size();
+        if (size == 0)
+            return;
+        int mid =  -distance % size;
+        if (mid < 0)
+            mid += size;
+        if (mid == 0)
+            return;
+
+        System.out.println("\n");
+        reverse(list.subList(0, mid));
+        reverse(list.subList(mid, size));
+        reverse(list);
+    }
+
+    public static <T> boolean replaceAll(List<T> list, T oldVal, T newVal) {
+        boolean result = false;
+        int size = list.size();
+        if (size < REPLACEALL_THRESHOLD || list instanceof RandomAccess) {
+            if (oldVal==null) {
+                for (int i=0; i<size; i++) {
+                    if (list.get(i)==null) {
+                        list.set(i, newVal);
+                        result = true;
+                    }
+                }
+            } else {
+                for (int i=0; i<size; i++) {
+                    if (oldVal.equals(list.get(i))) {
+                        list.set(i, newVal);
+                        result = true;
+                    }
+                }
+            }
+        } else {
+            ListIterator<T> itr=list.listIterator();
+            if (oldVal==null) {
+                for (int i=0; i<size; i++) {
+                    if (itr.next()==null) {
+                        itr.set(newVal);
+                        result = true;
+                    }
+                }
+            } else {
+                for (int i=0; i<size; i++) {
+                    if (oldVal.equals(itr.next())) {
+                        itr.set(newVal);
+                        result = true;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    public static int indexOfSubList(List<?> source, List<?> target) {
+        int sourceSize = source.size();
+        int targetSize = target.size();
+        int maxCandidate = sourceSize - targetSize;
+
+        if (sourceSize < INDEXOFSUBLIST_THRESHOLD ||
+            (source instanceof RandomAccess&&target instanceof RandomAccess)) {
+        nextCand:
+            for (int candidate = 0; candidate <= maxCandidate; candidate++) {
+                for (int i=0, j=candidate; i<targetSize; i++, j++)
+                    if (!eq(target.get(i), source.get(j)))
+                        continue nextCand;  // Element mismatch, try next cand
+                return candidate;  // All elements of candidate matched target
+            }
+        } else {  // Iterator version of above algorithm
+            ListIterator<?> si = source.listIterator();
+        nextCand:
+            for (int candidate = 0; candidate <= maxCandidate; candidate++) {
+                ListIterator<?> ti = target.listIterator();
+                for (int i=0; i<targetSize; i++) {
+                    if (!eq(ti.next(), si.next())) {
+                        // Back up source iterator to next candidate
+                        for (int j=0; j<i; j++)
+                            si.previous();
+                        continue nextCand;
+                    }
+                }
+                return candidate;
+            }
+        }
+        System.out.println("\n");
+        return -1;  // No candidate matched the target
+    }
+
+    public static int lastIndexOfSubList(List<?> source, List<?> target) {
+        int sourceSize = source.size();
+        int targetSize = target.size();
+        int maxCandidate = sourceSize - targetSize;
+
+        System.out.println("\n");
+        if (sourceSize < INDEXOFSUBLIST_THRESHOLD ||
+            source instanceof RandomAccess) {   // Index access version
+        nextCand:
+            for (int candidate = maxCandidate; candidate >= 0; candidate--) {
+                for (int i=0, j=candidate; i<targetSize; i++, j++)
+                    if (!eq(target.get(i), source.get(j)))
+                        continue nextCand;  // Element mismatch, try next cand
+                return candidate;  // All elements of candidate matched target
+            }
+        } else {  // Iterator version of above algorithm
+            if (maxCandidate < 0)
+                return -1;
+            ListIterator<?> si = source.listIterator(maxCandidate);
+        nextCand:
+            for (int candidate = maxCandidate; candidate >= 0; candidate--) {
+                ListIterator<?> ti = target.listIterator();
+                for (int i=0; i<targetSize; i++) {
+                    if (!eq(ti.next(), si.next())) {
+                        if (candidate != 0) {
+                            // Back up source iterator to next candidate
+                            for (int j=0; j<=i+1; j++)
+                                si.previous();
+                        }
+                        continue nextCand;
+                    }
+                }
+                return candidate;
+            }
+        }
+
+        return -1;  // No candidate matched the target
+    }
+
+    public static int lastIndexOfMainList(List<?> source, List<?> target) {
+        int sourceSize = source.size();
+        int targetSize = target.size();
+        int maxCandidate = sourceSize - targetSize;
+
+        System.out.println("\n");
+        if (sourceSize < INDEXOFSUBLIST_THRESHOLD ||
+            source instanceof RandomAccess) {   // Index access version
+        nextCand:
+            for (int candidate = maxCandidate; candidate >= 0; candidate--) {
+                for (int i=0, j=candidate; i<targetSize; i++, j++)
+                    if (!eq(target.get(i), source.get(j)))
+                        continue nextCand;  // Element mismatch, try next cand
+                return candidate;  // All elements of candidate matched target
+            }
+        } else {  // Iterator version of above algorithm
+            if (maxCandidate < 0)
+                return -1;
+            ListIterator<?> si = source.listIterator(maxCandidate);
+        nextCand:
+            for (int candidate = maxCandidate; candidate >= 0; candidate--) {
+                ListIterator<?> ti = target.listIterator();
+                for (int i=0; i<targetSize; i++) {
+                    if (!eq(ti.next(), si.next())) {
+                        if (candidate != 0) {
+                            // Back up source iterator to next candidate
+                            for (int j=0; j<=i+1; j++)
+                                si.previous();
+                        }
+                        continue nextCand;
+                    }
+                }
+                return candidate;
+            }
+        }
+
+        return -1;  // No candidate matched the target
+    }
+
+    public static int lastIndexOfAdditionalList(List<?> source, List<?> target) {
+        int sourceSize = source.size();
+        int targetSize = target.size();
+        int maxCandidate = sourceSize - targetSize;
+
+        System.out.println("\n");
+        if (sourceSize < INDEXOFSUBLIST_THRESHOLD ||
+            source instanceof RandomAccess) {   // Index access version
+        nextCand:
+            for (int candidate = maxCandidate; candidate >= 0; candidate--) {
+                for (int i=0, j=candidate; i<targetSize; i++, j++)
+                    if (!eq(target.get(i), source.get(j)))
+                        continue nextCand;  // Element mismatch, try next cand
+                return candidate;  // All elements of candidate matched target
+            }
+        } else {  // Iterator version of above algorithm
+            if (maxCandidate < 0)
+                return -1;
+            ListIterator<?> si = source.listIterator(maxCandidate);
+        return -1;  // No candidate matched the target
+    }
+}
